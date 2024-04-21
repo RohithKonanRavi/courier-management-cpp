@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.db import connection
 
 
+
 # Create your views here.
 def index(request):
     if(request.session.get('authenticated', False) == True):
@@ -85,4 +86,4 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegistrationForm()
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
