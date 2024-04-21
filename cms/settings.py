@@ -79,19 +79,33 @@ WSGI_APPLICATION = 'cms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'cms',
+#         'USER':'admin',
+#         'PASSWORD':'password',
+#         'HOST':'x23195983-courier-cpp-db.civwddw9gdry.eu-north-1.rds.amazonaws.com',
+#         'PORT':'3306',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#         },
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cms',
-        'USER':'admin',
+        'USER':'rohith',
         'PASSWORD':'password',
-        'HOST':'x23195983-courier-cpp-db.civwddw9gdry.eu-north-1.rds.amazonaws.com',
-        'PORT':'3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'HOST':'x23195983-courier-cpp-db-postgres.civwddw9gdry.eu-north-1.rds.amazonaws.com',
+        'PORT':'5432',
     }
 }
+
 
 
 
