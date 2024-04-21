@@ -53,16 +53,16 @@ def trackingsearch(request):
         }
     return render(request,'tracking-search.html', context)
 
-def update(request, id):
+def update(request, trackingId):  # Change id to trackingId
     context = {
         "fn": "update",
-        "trackingdetails": Tracking.objects.get(id=id),
+        "trackingdetails": Tracking.objects.get(id=trackingId),  # Change id to trackingId
         "heading": 'Tracking Update',
     }
     if (request.method == "POST"):
         tracking_date_str = request.POST['tracking_date']
         tracking_date = datetime.strptime(tracking_date_str, '%m/%d/%Y %H:%M')
-        tracking = Tracking.objects.get(id=id)
+        tracking = Tracking.objects.get(id=trackingId)  # Change id to trackingId
         tracking.tracking_date = tracking_date
         tracking.tracking_description = request.POST['tracking_description']
         tracking.location = request.POST['location']
@@ -72,7 +72,7 @@ def update(request, id):
         return redirect('trackinglisting')
     else:
         return render(request, 'tracking-add.html', context)
-
+    
 def add(request, goodsId):
     context = {
         "fn": "add",
