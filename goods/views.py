@@ -80,7 +80,7 @@ def add(request):
     }
     if request.method == "POST":
         new_goods = goods(
-            goods_name=request.POST['   '],
+            goods_name=request.POST['goods_name'],
             goods_type=request.POST['goods_type'],
             goods_sender_name=request.POST['goods_sender_name'],
             goods_sender_mobile=request.POST['goods_sender_mobile'],
