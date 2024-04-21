@@ -1,0 +1,147 @@
+@charset "utf-8";
+/*
+Template Name: BusinessToday
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Forms CSS
+*/
+
+form, fieldset, legend {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+legend {
+    display: none;
+}
+
+/* ----------------------------------------------Newsletter Form------------------------------------- */
+
+#header input {
+    display: block;
+    float: left;
+    width: 155px;
+    margin: 0 11px 0 0;
+    padding: 5px;
+    color: #333333; /* Dark text for readability */
+    background-color: #FFFFFF; /* White background */
+    border: 1px solid #009688; /* Teal border */
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#header input#news_go {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF; /* White text */
+    background-color: #009688; /* Teal background */
+    cursor: pointer;
+}
+
+/* ----------------------------------------------Search Form------------------------------------- */
+
+#topbar input {
+    display: block;
+    float: left;
+    width: 155px;
+    margin: 0 5px 0 0;
+    padding: 5px;
+    color: #B6B6B6; /* Placeholder text color */
+    background-color: #525252; /* Darker background for contrast */
+    border: 1px solid #343434; /* Dark border for depth */
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#topbar input#go {
+    width: 68px;
+    height: 26px;
+    margin: 0;
+    padding: 4px 0;
+    text-transform: uppercase;
+    color: #FFFFFF; /* White text */
+    background-color: #009688; /* Teal background, consistent with theme */
+    border-color: #009688; /* Teal border */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ----------------------------------------------Forms in Content Area------------------------------------- */
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #009688; /* Teal background */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=radio] {
+    width: 50px !important;
+    padding: 8px;
+    border: 1px solid #CCCCCC; /* Light grey border */
+    margin: 5px 5px 0 0;
+}
+select {
+    width: 300px !important;
+    padding: 8px;
+    border: 1px solid #CCCCCC; /* Light grey border */
+    margin: 5px 5px 0 0;
+}   
+#container #respond {
+    display: block;
+    width: 100%;
+}
+#container #respond input, #container #respond input[type='submit'] {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #CCCCCC; /* Light grey border */
+    margin: 5px 5px 0 0;
+}
+#container #respond textarea {
+    width: 98%;
+    border: 1px solid #CCCCCC; /* Light grey border */
+    padding: 2px;
+    overflow: auto;
+}
+#container #respond p {
+    margin: 5px 0;
+}
+
+/* ----------------------------------------------Newsletter------------------------------------- */
+
+#footer form {
+    display: block;
+    width: 300px;
+    margin: 0;
+    padding: 10px 0 0 0;
+    border: none;
+}
+#footer input {
+    display: block;
+    width: 218px;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    color: #FFFFFF; /* White text for readability */
+    background-color: #009688; /* Teal background */
+    border: 1px solid #00796B; /* Darker teal border for depth */
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#footer input#login_go {
+    width: 58px;
+    height: 62px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 60px;
+    cursor: pointer;
+    color: #FFFFFF; /* White text */
+    background-color: #b2dfdb; /* Light teal background */
+}

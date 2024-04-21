@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+    function delete_record(id) {
+        if (confirm("Do you want to delete the record?")) {
+            location.href = "/goods/delete/" + id + "/";
+        }
+    }
+    </script>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title is-3">Goods Records</h3>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="notification {% if message.tags %}is-{{ message.tags }}{% else %}is-info{% endif %}">
+                    <button class="delete"></button>
+                    <strong>{{ message }}</strong><br>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Tracking ID</th>
+                        <th>Sender Name</th>
+                        <th>Sender Mobile</th>
+                        <th>Receiver Name</th>
+                        <th>Receiver Mobile</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for goods in goodslist %}
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">{{ forloop.counter }}</td>
+                        <td style="text-align: center; color: red; font-weight: bold;">{{ goods.goods_id }}</td>
+                        <td>{{ goods.goods_sender_name }}</td>
+                        <td>{{ goods.goods_sender_mobile }}</td>
+                        <td>{{ goods.goods_receiver_name }}</td>
+                        <td>{{ goods.goods_receiver_mobile }}</td>
+                        <td style="text-align: center;">
+                            <div class="buttons has-addons">
+                                <a href="/goods/update/{{ goods.goods_id }}" class="button is-small is-success">Edit</a>
+                                <a href="/tracking/tracking-add/{{ goods.goods_id }}" class="button is-small is-info">Add Tracking</a>
+                                <a href="javascript:delete_record('{{ goods.goods_id }}');" class="button is-small is-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" style="text-align: center;">No goods records found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

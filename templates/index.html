@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero is-info is-large" style= " background-color : #303">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Courier Management
+            </h1>
+            <h2 class="subtitle">
+                Efficiently manage all your courier needs from one place.
+            </h2>
+            <btn class="button is-primary is-large">click here to Track your courier</btn>
+        </div>
+    </div>
+</section>
+{% comment %} 
+<div id="image-slider" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+            <li class="splide__slide"><img src="{% static 'images/banner1.jpg' %}" alt="Slide 1"></li>
+            <li class="splide__slide"><img src="{% static 'images/banner2.jpg' %}" alt="Slide 2"></li>
+            <li class="splide__slide"><img src="{% static 'images/banner3.jpg' %}" alt="Slide 3"></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#image-slider', {
+            type       : 'fade',
+            heightRatio: 0.5,
+            pagination : false,
+            arrows     : true,
+            cover      : true,
+        }).mount();
+    });
+</script> {% endcomment %}
+{% comment %} 
+<section class="section">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-7">
+                <h1 class="title">Courier Management</h1>
+                <p>Courier involves managing the movement of resources. This not only includes products, but the movement and storage of materials, tools, equipment, services, people and information. It includes transportation, packaging, warehousing, materials handling and condition management. It involves both forward and reverse flow, as well as managing inventory and warehousing.</p>
+                <p><a class="button is-info" href="/pages/about">View More About &raquo;</a></p>
+            </div>
+            <div class="column is-5">
+                <figure class="image is-4by3">
+                    <img src="{% static 'images/trust.jpg' %}" alt="Courier management image">
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <h2 class="title">About Courier Management</h2>
+                <p>Courier management is a complex process that involves the efficient movement and storage of goods. This includes not only products, but also materials, tools, equipment, and even people. Key aspects of courier management include transportation, packaging, warehousing, materials handling, and inventory management.</p>
+                <p>One of the most important aspects of courier management is tracking. With advanced tracking systems, you can know the exact location of your goods at any time. This real-time information is crucial for managing the supply chain effectively, allowing for adjustments to be made as needed.</p>
+                <p>In the context of manufacturing, courier management ensures that each machine and workstation receives the necessary resources when they are needed. This is particularly important in a constantly changing environment, where it's often necessary to adjust the flow of materials to prevent both shortages and over-supply. With effective courier tracking, you can maintain real-time oversight of your supply chain, making adjustments as necessary to ensure smooth operations.</p>
+            </div>
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <h3 class="title is-4">Modules of Project</h3>
+                    <article class="media">
+                        <figure class="media-left">
+                            <p class="image is-64x64">
+                                <img src="{% static 'images/side1.jpeg' %}">
+                            </p>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong><a href="#">Goods Management</a></strong>
+                                    <br>
+                                    Goods Management is a critical aspect of courier services. It involves the efficient handling and organization of goods to ensure their safe and timely delivery.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media">
+                        <figure class="media-left">
+                            <p class="image is-64x64">
+                                <img src="{% static 'images/side2.jpeg' %}">
+                            </p>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong><a href="#">Tracking Management</a></strong>
+                                    <br>
+                                    Tracking Management allows customers to monitor the progress of their shipments in real-time, enhancing customer confidence and satisfaction.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+{% endblock content %}

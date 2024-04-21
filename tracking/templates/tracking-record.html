@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+    function delete_record(id) {
+        if (confirm("Are you sure you want to delete this record?")) {
+            window.location.href = "/tracking/tracking-delete/" + id;
+        }
+    }
+</script>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title is-3">Tracking Records</h3>
+        {% if messages %}
+            <div class="notification is-success">
+                {% for message in messages %}
+                    <button class="delete"></button> <!-- Bulma close button for notification -->
+                    <strong>{{ message }}</strong>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Tracking Id</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tracking in trackinglist %}
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">{{ tracking.id }}</td>
+                        <td>{{ tracking.tracking_date }}</td>
+                        <td>{{ tracking.tracking_description }}</td>
+                        <td>{{ tracking.location }}</td>
+                        <td style="text-align: center;">
+                            <div class="buttons are-small">
+                                <a href="/tracking/tracking-update/{{tracking.id}}" class="button is-success">Edit</a>
+                                <a href="JavaScript:delete_record('{{tracking.id}}')" class="button is-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" name="act" />
+        <input type="hidden" name="user_id" id="recordID" />
+    </div>
+</section>
+
+{% endblock content %}

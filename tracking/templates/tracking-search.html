@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+<div class="wrapper col5">
+  <div id="container">
+  <div id="respond">
+		<form enctype="multipart/form-data" method="post" class="form-signin wow fadeInUp" action="" style="max-width:60%">
+			{% csrf_token %}
+			<h2 class="form-signin-heading">
+				Track your goods
+			</h2>
+			{% if messages %}
+				<div class="alert alert-success fade in" style="margin:10px;">
+					{% for message in messages %}
+						<strong>{{ message }}</strong>
+					{% endfor %}
+				</div>
+			{% endif %}
+				<p>
+					<input type="text" required class="form-control" placeholder="Enter Tracking Number" autofocus="" name="tracking_id" id="tracking_id" value="{{trackingdetails.tracking_id}}">
+				</p>
+				<p>
+					<input name="submit" type="submit" id="submit" value="Search Tracking" />
+				</p>
+			</div>
+			<input type="hidden" name="act" value="save_user">
+			<input type="hidden" name="goods_id" value="{{goodsId}}">
+		</form>
+		<br><br>
+		<h3>Your Tracking Details</h3>
+			{% if messages %}
+				<div class="alert alert-success fade in" style="margin:10px;">
+					{% for message in messages %}
+						<strong>{{ message }}</strong>
+					{% endfor %}
+				</div>
+		  {% endif %}
+			<form name="frm" action="lib/user.php" method="post">
+				  <table summary="Summary Here" cellpadding="0" cellspacing="0">
+				   <thead>
+					  <tr>
+						<th>Sr. No.</th>
+						<th>Date</th>
+						<th>Description</th>
+					  </tr>
+					</thead><tbody>  
+					  {% for tracking in trackinglist %}
+					  <tr>
+						<td style="text-align:center; font-weight:bold;">{{ forloop.counter }}</td>
+						<td>{{tracking.tracking_date}}</td>
+						<td>{{tracking.tracking_description}}</td>
+					  </tr>
+					  {% endfor %}
+				   </tbody>
+				</table>
+			  </section>
+			  <input type="hidden" name="act" />
+			  <input type="hidden" name="user_id" id="recordID" />
+			 </form>
+	</div>
+</div>
+</div>
+{% endblock content %}

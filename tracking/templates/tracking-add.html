@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
+<script>
+  $( function() {
+    $( "#tracking_date" ).datetimepicker();
+  } );
+</script>
+
+<div class="wrapper col5">
+  <div id="container">
+  <div id="respond">
+        <form enctype="multipart/form-data" method="post" class="form-signin wow fadeInUp" action="" style="max-width:60%">
+            {% csrf_token %}
+            <h2 class="form-signin-heading">
+                Add/Edit Tracking Records
+            </h2>
+            {% if messages %}
+                <div class="alert alert-success fade in" style="margin:10px;">
+                    {% for message in messages %}
+                        <strong>{{ message }}</strong>
+                    {% endfor %}
+                </div>
+            {% endif %}
+                <p>
+                    <input type="text" required class="form-control" placeholder="Tracking Date" autofocus="" name="tracking_date" id="tracking_date" value="{{trackingdetails.tracking_date}}">
+                </p>
+                
+                <p>
+                    <input type="text" required class="form-control" placeholder="Location" autofocus="" name="location" id="location" value="{{trackingdetails.location}}">
+                </p>
+                <p>
+                    <input type="text" required class="form-control" placeholder="Description" autofocus="" name="tracking_description" id="tracking_description" value="{{trackingdetails.tracking_description}}">
+                </p>
+                <p>
+                    <input name="submit" type="submit" id="submit" value="Save Tracking" />
+                </p>
+            </div>
+            <input type="hidden" name="act" value="save_user">
+            <input type="hidden" name="goods_id" value="{{goodsId}}">
+        </form>
+    </div>
+</div>
+</div>
+{% endblock content %}

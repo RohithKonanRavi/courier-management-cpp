@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-5">
+                <div class="box">
+                    <h3 class="title has-text-centered">Login to your Account</h3>
+                    <form submit="/signin" method="post" class="form-signin wow fadeInUp">
+                        {% csrf_token %}
+                        {% if messages %}
+                        <div class="notification is-success">
+                            {% for message in messages %}
+                            <button class="delete"></button>
+                            <strong>{{ message }}</strong>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="field">
+                            <label class="label" for="username">User ID (required)</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="text" placeholder="User ID" name="username" id="username" required autofocus>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="password">Password (required)</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="password" placeholder="Password" name="password" id="password" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-link" id="submit">Sign In</button>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="act" value="check_login">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

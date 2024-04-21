@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Courier Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="{% static '/css/layout.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static '/css/forms.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static '/css/navi.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static '/css/tables.css' %}" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body id="top">
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Courier Management</a></h1>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col2">
+  <div id="topbar">
+    <div id="topnav">
+    <ul>
+    {% if request.session.user_id == 1 %}
+    <li><a href="/">Home</a></li>
+    {% else %}
+    <li><a href="/" class="current">Home</a></li>
+    <li><a href="/pages/about">About</a></li>
+    <li><a href="/tracking/tracking-search">Search Tracking</a></li>
+    <li><a href="/pages/contact">Contact</a></li>
+    {% endif %}
+    
+    {% if request.session.user_id == 1 %}
+    <li><a href="/users/dashboard">Dashboard</a></li>
+    <li><a href="#">Courier Management</a>
+          <ul>
+            <li><a href="/goods/goods-add">Add Courier</a></li>
+            <li><a href="/goods/goods-record">Courier Details</a></li>
+          </ul>
+    </li>
+    <li><a href="#">Tracking Management</a>
+          <ul>
+                <li><a href="/tracking/tracking-record">Tracking Details</a></li>
+          </ul>
+    </li>	
+    {% if request.session.authenticated %}	
+  {% endif %}	
+  <li><a href="/users/changepassword">Change Password</a></li>
+    <li><a href="/users/logout">Logout</a></li>
+    {% else %}
+    <li><a href="/users">Login</a></li>
+    <li><a href="/users/register">Register</a></li>  <!-- New Register link -->
+    {% endif %}
+</ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+    <!--header end-->
+    {% block content %} {% endblock content %}
+    <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Record Delete Confirmation ?</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                            Do you want to delete the record ?
+                        </div>
+                        <div class="rows" style="float:right; margin-top:15px;">
+                            <button class="btn btn-danger" type="button" onClick="delete_record()">Delete</button>
+                            <button class="btn btn-success" type="button" class="close" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                        </div>
+                    </form>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>  
+	<footer class="footer">
+		<div class="content has-text-centered">
+		  <p>
+			<strong>Courier Management</strong> by <a href="https://www.example.com">Rohith konan Ravi</a>. The source code is licensed
+			<a href="#">MIT</a>. The website content is licensed <a href="#">To Rohith konan ravi @ 2024</a>.
+		  </p>
+		  <p>
+			<a class="button is-small is-primary" href="#">Privacy Policy</a>
+			<a class="button is-small is-link" href="#">Terms & Conditions</a>
+		  </p>
+		</div>
+	  </footer>
+</body>
+</html>

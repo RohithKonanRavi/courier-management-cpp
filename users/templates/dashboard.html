@@ -1,0 +1,102 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">Courier Management Dashboard</h1>
+        <div class="columns is-multiline">
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Add Goods
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Quickly add goods into the system.
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="/goods/goods-add" class="card-footer-item">Add</a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Goods Details
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            View and manage details of goods.
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="/goods/goods-record" class="card-footer-item">View Details</a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Tracking Details
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Track all shipments and update statuses.
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="/tracking/tracking-record" class="card-footer-item">Track</a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Change Password
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Update your password regularly.
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="/users/changepassword" class="card-footer-item">Change Password</a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Logout
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Securely logout of your account.
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="/users/logout" class="card-footer-item">Logout</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
