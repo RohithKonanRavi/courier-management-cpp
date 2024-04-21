@@ -44,8 +44,8 @@ phases:
     commands:
     #sonar analyiss this report will be send to the sonarcloud
 
-    - echo "successfull"
     - sonar-scanner   -Dsonar.organization=rohithkonanravi   -Dsonar.projectKey=RohithKonanRavi_courier-management-cpp   -Dsonar.sources=.   -Dsonar.host.url=https://sonarcloud.io -Dsonar.python.pylint.reportPaths=pylint_report.txt
+    - echo "build is success"
 artifacts:
   files:
   - '**/*'

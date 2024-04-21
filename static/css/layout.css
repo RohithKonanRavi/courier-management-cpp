@@ -24,6 +24,16 @@ body {
     background-color: #e0f2f1;
 }
 
+
+
+.hero {
+    background-image: url('../images/RKR.png');
+    background-color: #303;
+    background-size: cover;
+}
+
+
+
 .justify {
     text-align: justify;
 }
